@@ -1,0 +1,23 @@
+import argparse
+
+def Counting_DNA_Nucleotides(DNA):
+    count_A = DNA.count('A')
+    count_C = DNA.count('C')
+    count_G = DNA.count('G')
+    count_T = DNA.count('T')
+    return (count_A, count_C, count_G, count_T)
+
+def main():
+    parser = argparse.ArgumentParser(description='Count occurrences of nucleotides in a DNA string.')
+    parser.add_argument('DNA', type=str, help='The DNA string (letters A,C,G or T only)')
+    args = parser.parse_args()
+    
+    counts = Counting_DNA_Nucleotides(args.DNA)
+    print("The occurrence of A is", counts[0])
+    print("The occurrence of C is", counts[1])
+    print("The occurrence of G is", counts[2])
+    print("The occurrence of T is", counts[3])
+    print("The function returns", counts)
+
+if __name__ == "__main__":
+    main()
